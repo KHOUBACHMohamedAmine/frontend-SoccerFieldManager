@@ -1,0 +1,24 @@
+<div class="row">
+  <table class="table caption-top">
+    <caption>Liste Des Terrains</caption>
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Reference</th>
+      <th scope="col">Etat</th>
+      <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let terrain of terrains">
+      <td>{{terrain.id}}</td>
+      <td>{{terrain.reference}}</td>
+      <td>{{terrain.etat}}</td>
+      <td><a  class="btn btn-warning" href="#" role="button"><i class="fa fa-pencil"></i></a><a  class="btn btn-danger" href="#" role="button"><i class="fa fa-trash"></i></a></td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+
+

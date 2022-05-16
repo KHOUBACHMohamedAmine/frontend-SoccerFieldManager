@@ -1,0 +1,35 @@
+<div class="row">
+  <table class="table caption-top">
+    <caption>Liste Des Reservations</caption>
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Client ID</th>
+      <th scope="col">Nom du Client</th>
+      <th scope="col">Cin</th>
+      <th scope="col">Etablissemnt</th>
+      <th scope="col">Reference</th>
+      <th scope="col">Date de reservation</th>
+      <th scope="col">Terrain</th>
+      <th scope="col">Statut</th>
+      <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let reservation of reservations">
+      <td>{{reservation.id}}</td>
+      <td>{{reservation.client.id}}</td>
+      <td>{{reservation.client.nom}}</td>
+      <td>{{reservation.client.cin}}</td>
+      <td>{{reservation.client.etablissement}}</td>
+      <td>{{reservation.reference}}</td>
+      <td>{{reservation.date}}</td>
+      <td>{{reservation.terrain.id}}</td>
+      <td>{{reservation.status}}</td>
+      <td><a  class="btn btn-warning" href="#" role="button"><i class="fa fa-pencil"></i></a><a  class="btn btn-success" href="#" role="button"><i class="fa fa-check"></i></a><a  class="btn btn-danger" href="#" role="button"><i class="fa fa-trash"></i></a></td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+
