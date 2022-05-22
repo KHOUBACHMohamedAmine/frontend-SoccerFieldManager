@@ -7,6 +7,7 @@ export interface Client {
   numapogee:number;
   numtel:string;
   sexe:string;
+  isArchived:boolean;
 
 
 

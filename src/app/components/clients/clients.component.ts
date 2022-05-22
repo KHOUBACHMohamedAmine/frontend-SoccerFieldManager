@@ -8,17 +8,7 @@ import {Client} from "../../models/client";
   styleUrls: ['./clients.component.css']
 })
 export class ClientsComponent implements OnInit {
-  client:Client = {
-    nom:'Coming ',
-    prenom:'from',
-    cin:'front',
-    etablissement:'end',
-    numtel:'0668396589',
-    sexe:'front',
-    numapogee:1234
 
-
-  }
 clients: Client[] =[];
   constructor(private clientService:ClientService) { }
 
@@ -26,13 +16,18 @@ clients: Client[] =[];
  this.getClients();
   }
   getClients(){
+
     this.clientService.findAll()
-      .subscribe(clients => this.clients=clients)
+      .subscribe(
+
+        clients => {
+          this.clients=clients
+        })
   }
   deleteClient(idClient){
 
-    this.clientService.delete(idClient).subscribe(()=>{
-      this.clients = this.clients.filter(client => client.id !=idClient )
+    this.clientService.delete(idClient).subscribe((client)=>{
+      this.getClients();
     })
 }
   persistClient(client){
