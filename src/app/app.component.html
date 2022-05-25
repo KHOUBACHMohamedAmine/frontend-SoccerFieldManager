@@ -1,6 +1,16 @@
-<app-navbar></app-navbar>
-<div class="container">
-  <app-clients></app-clients>
-  <app-reservations></app-reservations>
-  <app-terrain></app-terrain>
-</div>
+<nb-layout>
+
+  <nb-layout-header fixed>
+  <!-- Insert header here -->
+  </nb-layout-header>
+
+  <nb-layout-column>
+    <router-outlet></router-outlet>
+    
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+  <!-- Insert footer here -->
+  </nb-layout-footer>
+
+</nb-layout>

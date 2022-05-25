@@ -8,12 +8,15 @@ import {Client} from "../../models/client";
   styleUrls: ['./clients.component.css']
 })
 export class ClientsComponent implements OnInit {
-
+id :any;
 clients: Client[] =[];
+
   constructor(private clientService:ClientService) { }
 
   ngOnInit() {
  this.getClients();
+
+
   }
   getClients(){
 
@@ -24,13 +27,19 @@ clients: Client[] =[];
           this.clients=clients
         })
   }
+  getClientById(id){
+    this.clientService.findClientById(id).subscribe(res =>{
+      console.log(res);
+    })
+  }
   deleteClient(idClient){
 
     this.clientService.delete(idClient).subscribe((client)=>{
       this.getClients();
     })
 }
-  persistClient(client){
-    this.clientService.persist(client)
+
+  insertClient(client){
+    this.clientService.insert(client)
   }
 }
