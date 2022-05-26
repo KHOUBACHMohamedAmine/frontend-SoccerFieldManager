@@ -1,46 +1,46 @@
-<form (ngSubmit)="updateClient()">
+<form  [formGroup]="clientForm" (ngSubmit)="updateClient()">
 
   <div class="from-group">
 
     <label for="nom" class="form-label" >Nom</label>
-    <input type="text" class="form-control" id="nom" name="nom" >
+    <input type="text" class="form-control" id="nom" name="nom" formControlName="nom" >
   </div>
   <div class="from-group">
 
     <label for="prenom" class="form-label" >Prénom</label>
-    <input type="text" class="form-control" id="prenom" name="prenom" >
+    <input type="text" class="form-control" id="prenom" name="prenom"formControlName="prenom" >
 
   </div>
   <div class="from-group">
 
     <label for="cin" class="form-label" >Cin</label>
-    <input type="text" class="form-control" id="cin"  >
+    <input type="text" class="form-control" id="cin"  formControlName="cin" >
 
   </div>
   <div class="from-group">
 
     <label for="numApogee" class="form-label" >NumApogée</label>
-    <input type="text" class="form-control" id="numApogee" name="numApogee" >
+    <input type="text" class="form-control" id="numApogee" name="numApogee" formControlName="numapogee">
 
   </div>
   <div class="from-group">
 
     <label for="etablissement" class="form-label" >Etablissement</label>
-    <input type="text" class="form-control" id="etablissement" name="etablissement" >
+    <input type="text" class="form-control" id="etablissement" name="etablissement"formControlName="etablissement" >
 
   </div>
   <div class="from-group">
 
-    <label for="numTel"  class="form-label" >Numéro de Téléphone</label>
-    <input type="text" class="form-control" id="numTel" name="numTel" >
+    <label for="numtel"  class="form-label" >Numéro de Téléphone</label>
+    <input type="text" class="form-control" id="numTel" name="numTel"formControlName="numtel" >
 
   </div>
   <div class="from-group">
 
     <label for="sexe" class="form-label">Sexe</label>
-    <input type="text" class="form-control" id="sexe" name="sexe" >
+    <input type="text" class="form-control" id="sexe" name="sexe" formControlName="sexe">
 
   </div>
-  <button class="btn btn-success">Mise à Jour</button>
+  <button class="btn btn-success" >Mise à Jour</button>
 
 </form>

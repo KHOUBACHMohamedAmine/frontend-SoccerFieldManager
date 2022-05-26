@@ -1,26 +1,37 @@
-<nav class="navbar navbar-expand-sm navbar-dark bg-success">
-  <a class="navbar-brand" href="#">SoccerFieldManager</a>
-  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-          aria-controls="collapsibleNavId"
-          aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavId">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li> <li class="nav-item active">
-        <a class="nav-link" href="#">Lise des Clients<span class="sr-only">(current)</span></a>
-      </li> <li class="nav-item active">
-        <a class="nav-link" href="#">Liste des Reservations <span class="sr-only">(current)</span></a>
-      </li> <li class="nav-item active">
-        <a class="nav-link" href="#">Liste des Terrains<span class="sr-only">(current)</span></a>
-      </li><li class="nav-item active">
-      <a class="nav-link" href="#">Liste du Personnel<span class="sr-only">(current)</span></a>
-    </li>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid ">
+    <a class="navbar-brand" href="home-page">SoccerFieldManager</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent" >
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link me-4" href="home-page">Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link me-4" href="client-list">Lise des Clients</a>
+        </li>
 
-    </ul>
+        <li class="nav-item">
+          <a class="nav-link me-4" href="reservation-list">Liste des Reservations </a>
+        </li> <li class="nav-item">
+        <a class="nav-link me-4" href="terrain-list">Liste des Terrains</a>
+      </li> <li class="nav-item">
+        <a class="nav-link me-4" href="personnel-list">Liste du Personnel</a>
+      </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Admin Name
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Logout</a></li>
 
+          </ul>
+      </ul>
 
+    </div>
   </div>
 </nav>
+
