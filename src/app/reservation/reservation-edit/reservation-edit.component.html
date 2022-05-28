@@ -1,0 +1,18 @@
+<form  [formGroup]="reservationForm" (ngSubmit)="updateReservation()">
+
+  <div class="from-group">
+
+    <label for="reference" class="form-label" >Reference</label>
+    <input type="text" class="form-control" id="reference"  formControlName="reference" >
+  </div>
+  <div class="from-group">
+
+    <label for="date" class="form-label" >Date Réservation</label>
+    <input type="text" class="form-control" id="date" formControlName="date" >
+
+  </div>
+
+  <button class="btn btn-success" >Mise à Jour</button>
+
+</form>
+

@@ -7,7 +7,7 @@
       <th scope="col">Client ID</th>
       <th scope="col">Nom du Client</th>
       <th scope="col">Cin</th>
-      <th scope="col">Etablissemnt</th>
+      <th scope="col">Etablissement</th>
       <th scope="col">Reference</th>
       <th scope="col">Date de reservation</th>
       <th scope="col">Terrain</th>
@@ -26,7 +26,7 @@
       <td>{{reservation.date}}</td>
       <td>{{reservation.terrain.id}}</td>
       <td>{{reservation.status}}</td>
-      <td><a  class="btn btn-warning" href="#" role="button"><i class="fa fa-pencil"></i></a><a  class="btn btn-success" href="#" role="button"><i class="fa fa-check" value="valider"></i></a><a  class="btn btn-danger" href="#" role="button"><i class="fa fa-trash"></i></a></td>
+      <td><button  class="btn btn-warning me-2"  role="button" routerLink="reservation-edit/{{reservation.id}}"><i class="fa fa-pencil"></i></button><button  class="btn btn-success me-2" (click)="confirmReservation(reservation)" role="button"><i class="fa fa-check" ></i></button><button (click)="deleteReservation(reservation.id)" class="btn btn-danger "  role="button"><i class="fa fa-trash"></i></button></td>
     </tr>
 
     </tbody>

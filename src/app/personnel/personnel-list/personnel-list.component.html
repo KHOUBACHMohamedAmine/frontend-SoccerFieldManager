@@ -1,1 +1,38 @@
-<p>personnel-list works!</p>
+<button  type="button"  routerLink="personnel-form" class="btn btn-outline-primary" ><i class="fa fa-solid fa-user-plus fa-lg"></i> Ajouter Un Employé !</button>
+<div class="row">
+
+  <table class="table caption-top">
+    <caption>Liste Des Employés</caption>
+
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prenom</th>
+      <th scope="col">Cin</th>
+      <th scope="col">Numéro de téléphone</th>
+      <th scope="col">Sexe</th>
+      <th scope="col">Poste</th>
+      <th scope="col">Salaire</th>
+      <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr  *ngFor="let employee of employees  "
+
+    >
+
+      <td>{{employee.id}}</td>
+      <td>{{employee.nom}}</td>
+      <td> {{employee.prenom}}</td>
+      <td> {{employee.cin}}</td>
+      <td>{{employee.numtel}}</td>
+      <td>{{employee.sexe}}</td>
+      <td>{{employee.poste}}</td>
+      <td>{{employee.salaire}}DH</td>
+      <td><button  class="btn btn-warning me-2"  role="button" routerLink="personnel-edit/{{employee.id}}"><i class="fa fa-pencil"></i></button><button (click)="deleteEmployee(employee.id)" class="btn btn-danger"  role="button"><i class="fa fa-trash"></i></button></td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>

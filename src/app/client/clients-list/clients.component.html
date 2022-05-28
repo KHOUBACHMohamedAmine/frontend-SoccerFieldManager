@@ -1,6 +1,8 @@
 <div class="row">
+
   <table class="table caption-top">
     <caption>Liste Des Clients</caption>
+
     <thead>
     <tr>
       <th scope="col">ID</th>
@@ -27,7 +29,7 @@
       <td> {{client.etablissement}} </td>
       <td>{{client.numtel}}</td>
       <td>{{client.sexe}}</td>
-      <td><button  class="btn btn-warning"  role="button" routerLink="client-edit/{{client.id}}"><i class="fa fa-pencil"></i></button><button (click)="deleteClient(client.id)" class="btn btn-danger"  role="button"><i class="fa fa-trash"></i></button></td>
+      <td><button  class="btn btn-warning me-2"  role="button" routerLink="client-edit/{{client.id}}"><i class="fa fa-pencil"></i></button><button (click)="deleteClient(client.id)" class="btn btn-danger"  role="button"><i class="fa fa-trash"></i></button></td>
     </tr>
 
     </tbody>

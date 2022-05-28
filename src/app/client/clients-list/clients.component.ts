@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ClientService} from "../../services/client.service";
 import {Client} from "../../models/client";
 import {ActivatedRoute, Route, Router} from "@angular/router";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-clients',
@@ -11,8 +12,13 @@ import {ActivatedRoute, Route, Router} from "@angular/router";
 export class ClientsComponent implements OnInit {
 id :any;
 clients: Client[] =[];
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action , {
+      duration: 3000
+    });
+  }
 
-  constructor(private clientService:ClientService, private router: Router, private activeRoute: ActivatedRoute) { }
+  constructor(private clientService:ClientService,private _snackBar: MatSnackBar, private router: Router, private activeRoute: ActivatedRoute) { }
 
   ngOnInit() {
   this.getClients();
@@ -37,12 +43,13 @@ clients: Client[] =[];
   deleteClient(idClient){
 
     this.clientService.delete(idClient).subscribe((client)=>{
+      this.openSnackBar("Client Supprimé avec succés","fermer");
       this.getClients();
+
     })
 }
-redirectToForm(id: number){
-    this.router.navigate(['client-edit',id],{relativeTo: this.activeRoute});
-}
+
+
 
   insertClient(client){
     this.clientService.insert(client)

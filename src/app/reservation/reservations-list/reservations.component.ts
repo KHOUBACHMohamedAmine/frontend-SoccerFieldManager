@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Reservation} from "../../models/reservation";
 import {ReservationService} from "../../services/reservation.service";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-reservations',
@@ -10,21 +11,41 @@ import {ReservationService} from "../../services/reservation.service";
 export class ReservationsComponent implements OnInit {
 
   reservations: Reservation[] =[];
-  constructor(private reservationService:ReservationService) { }
+  openSnackBar(message: string, action: string , ) {
+    this._snackBar.open(message, action , {
+      duration: 3000
+    });
+  }
+  constructor(private reservationService:ReservationService,private _snackBar: MatSnackBar) { }
 
 
   ngOnInit() {
     this.getReservations();
   }
-  /*reservationIsconfirmed(){
-    if (.status==0){
-      return "En Attente";
-    }else if (this.reservations[].status==1){
-      return "Confirmée";
-    }
-  }*/
+
   getReservations(){
     this.reservationService.findAll()
       .subscribe(reservations => this.reservations=reservations)
+  }
+
+  deleteReservation(id) {
+    this.reservationService.delete(id).subscribe(()=>{
+      console.log("deleted",id)
+      this.openSnackBar("Réservation Supprimée avec succés","fermer");
+
+      this.getReservations();
+    })
+
+
+  }
+
+  confirmReservation(reservation : Reservation) {
+    this.reservationService.confirm(reservation).subscribe(()=>{
+      console.log("Confirmed",reservation.id)
+      this.openSnackBar("Réservation Confirmée avec succés","fermer");
+      this.getReservations();
+    })
+
+
   }
 }

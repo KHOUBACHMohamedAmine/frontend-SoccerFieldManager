@@ -28,7 +28,9 @@ id:any;
 data:any;
 client: Client | undefined;
   openSnackBar(message: string, action: string) {
-    this._snackBar.open(message, action);
+    this._snackBar.open(message, action , {
+      duration: 3000
+    });
   }
 
 
@@ -63,7 +65,7 @@ this.clientService.update(this.clientForm.value,this.id).subscribe(res =>{
   this.openSnackBar("Client Modifié avec succes","fermer");
   setTimeout(() => {
     return this.router.navigateByUrl('client-list');
-  }, 3000);
+  }, 1000);
 
 });
   }

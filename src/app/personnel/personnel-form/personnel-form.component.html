@@ -1,1 +1,46 @@
-<p>personnel-form works!</p>
+<form  [formGroup]="personnelForm" (ngSubmit)="ajouterPersonnel()">
+
+  <div class="from-group">
+
+    <label for="nom" class="form-label" >Nom</label>
+    <input type="text" class="form-control" id="nom" name="nom" formControlName="nom" >
+  </div>
+  <div class="from-group">
+
+    <label for="prenom" class="form-label" >Prénom</label>
+    <input type="text" class="form-control" id="prenom" name="prenom" formControlName="prenom" >
+
+  </div>
+  <div class="from-group">
+
+    <label for="cin" class="form-label" >Cin</label>
+    <input type="text" class="form-control" id="cin"  formControlName="cin" >
+
+  </div>
+
+  <div class="from-group">
+
+    <label for="numtel"  class="form-label" >Numéro de Téléphone</label>
+    <input type="text" class="form-control" id="numTel" name="numTel" formControlName="numtel" >
+
+  </div>
+  <div class="from-group">
+
+    <label for="sexe" class="form-label">Sexe</label>
+    <input type="text" class="form-control" id="sexe" name="sexe" formControlName="sexe">
+
+  </div> <div class="from-group">
+
+  <label for="poste" class="form-label">Poste</label>
+  <input type="text" class="form-control" id="poste"  formControlName="poste">
+
+</div> <div class="from-group">
+
+  <label for="salaire" class="form-label">Salaire</label>
+  <input type="text" class="form-control" id="salaire"  formControlName="salaire">
+
+</div>
+  <button class="btn btn-success" >Ajouter</button>
+
+</form>
+

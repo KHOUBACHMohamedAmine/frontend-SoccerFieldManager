@@ -1,3 +1,5 @@
+<button  type="button" routerLink="terrain-form" class="btn btn-outline-primary"><i class="fa fa-flag fa-lg"></i> Ajouter Un Terrain !</button>
+
 <div class="row">
   <table class="table caption-top">
     <caption>Liste Des Terrains</caption>
@@ -14,7 +16,8 @@
       <td>{{terrain.id}}</td>
       <td>{{terrain.reference}}</td>
       <td>{{terrain.etat}}</td>
-      <td><a  class="btn btn-warning" href="#" role="button"><i class="fa fa-pencil"></i></a><a  class="btn btn-danger" href="#" role="button"><i class="fa fa-trash"></i></a></td>
+
+      <td><button  class="btn btn-warning" routerLink="terrain-edit/{{terrain.id}}" role="button"><i class="fa fa-pencil"></i></button><button class="btn btn-danger" (click)="deleteTerrain(terrain.id)" role="button"><i class="fa fa-trash"></i></button></td>
     </tr>
 
     </tbody>

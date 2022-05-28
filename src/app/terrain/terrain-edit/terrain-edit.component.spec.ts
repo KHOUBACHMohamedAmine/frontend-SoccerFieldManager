@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ReservationFormComponent } from './reservation-form.component';
+import { TerrainEditComponent } from './terrain-edit.component';
 
-describe('ReservationFormComponent', () => {
-  let component: ReservationFormComponent;
-  let fixture: ComponentFixture<ReservationFormComponent>;
+describe('TerrainEditComponent', () => {
+  let component: TerrainEditComponent;
+  let fixture: ComponentFixture<TerrainEditComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ReservationFormComponent ]
+      declarations: [ TerrainEditComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ReservationFormComponent);
+    fixture = TestBed.createComponent(TerrainEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
