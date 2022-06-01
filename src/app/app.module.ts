@@ -24,14 +24,24 @@ import { MatInputModule } from '@angular/material/input';
 import {NgxMatDatetimePickerModule, NgxMatNativeDateModule, NgxMatTimepickerModule} from '@angular-material-components/datetime-picker';
 import {PersonnelFormComponent} from "./personnel/personnel-form/personnel-form.component";
 import {PersonnelEditComponent} from "./personnel/personnel-edit/personnel-edit.component";
+import {HomeComponent} from "./client'shomePage/home/home.component";
+import {SecurityModule} from "./security/security.module";
+import {LoginFormComponent} from "./security/login-form/login-form.component";
+import {MatCardModule} from "@angular/material/card";
+import {IsAuthenticatedGuard} from "./is-authenticated.guard";
+import {AuthInterceptorProvider} from "./auth.interceptor";
+import {HasRoleGuard} from "./has-role.guard";
+import {ClientsHomePageModule} from "./client\'shomePage/clientsHomePage.module";
+import {ClientFormComponent} from "./client'shomePage/client-form/client-form.component";
+import {HomeModule} from "./home/home.module";
 
 
 
 
 const appRoutes : Routes = [
-
+  {path:'',component:HomeComponent},
   { path: 'client-list/client-edit/:id', component: ClientEditComponent },
-  { path: 'client-list', component: ClientsComponent },
+  { path: 'client-list', component: ClientsComponent,canActivate:[IsAuthenticatedGuard,HasRoleGuard],data:{role:'admin'} },
   { path: 'reservation-list', component: ReservationsComponent },
   { path: 'reservation-list/reservation-edit/:id', component: ReservationEditComponent },
   { path: 'terrain-list', component: TerrainComponent },
@@ -41,6 +51,10 @@ const appRoutes : Routes = [
   { path: 'personnel-list/personnel-form', component: PersonnelFormComponent },
   { path: 'personnel-list/personnel-edit/:id', component: PersonnelEditComponent },
   { path: 'home-page', component: HomePageComponent },
+  { path: 'client/home', component: HomeComponent },
+  { path: 'login', component: LoginFormComponent },
+  { path: 'client-form', component: ClientFormComponent },
+
 
 
 
@@ -53,8 +67,10 @@ const appRoutes : Routes = [
     ClientsComponent,
     ReservationsComponent,
     TerrainComponent,
+    LoginFormComponent,
   ],
   imports: [
+    ClientsHomePageModule,
     RouterModule,
     ClientModule,
     ReservationModule,
@@ -71,13 +87,13 @@ const appRoutes : Routes = [
     NgxMatNativeDateModule,
     RouterModule.forRoot(appRoutes, {enableTracing: true}),
     BrowserAnimationsModule,
+    SecurityModule,
+    MatCardModule,
+    HomeModule,
 
 
   ],
-  providers: [
-
-    ClientEditComponent
-  ],
+  providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

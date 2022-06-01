@@ -1,0 +1,13 @@
+.nav-link:hover{
+  background:green;
+  color:white!important;
+}
+.nav-link{
+  color:black!important;
+}
+.navbar-brand{
+  margin-right: 150px!important;
+}
+.navbar-brand:hover{
+  color:green;
+}

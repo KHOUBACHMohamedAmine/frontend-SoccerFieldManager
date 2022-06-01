@@ -1,0 +1,1155 @@
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-light" style="border-bottom: 5px solid green;">
+  <div class="container-fluid ">
+    <a class="navbar-brand" href="home-page">SoccerFieldManager</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link me-2" href="home-page-client">Accueil </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link me-2" href="#apropos">À Propos</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link me-2" href="#nosterrains">Nos Terrains</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link me-2" href="#planning">Planning</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link me-2" href="#reserver">Réserver</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link me-2" href="#contact">Contact</a>
+        </li>
+        <li class="nav-item" *ngIf="service.user !=null &&  service.user.roles!=null  && service.user.roles.includes('admin')">
+          <a class="nav-link me-2" href="home-page">Dashboard</a>
+        </li>
+
+
+        <li><a class="nav-link " *ngIf="!isAuthenticated" style="margin-left: 90px; " href="/client-form">S'inscrire</a>
+        </li>
+        <li><a class="nav-link " *ngIf="!isAuthenticated" href="/login">Se Connecter</a></li>
+
+      </ul>
+
+
+    </div>
+  </div>
+</nav>-->
+<div class="car">
+  <div id="carouselExampleDark" class="carousel carousel-dark slide " data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    </div>
+    <div class="carousel-inner ">
+      <div class="carousel-item active" data-bs-interval="10000">
+        <img src="assets/images/pic1.jpg" class="tales">
+        <div class="carousel-caption">
+          <h5 class="text-white bg-dark">Bienvenue dans L'espace Admin de L'espace Sportif Ibn Tofail</h5>
+          <p class="text-white">Cette Plateforme vous Garantie La Gestion De La Totalité De L'Espace</p>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="assets/images/pic2.jpg" class="tales">
+        <div class="carousel-caption">
+          <p class="text-white bg-dark">La Gestion De Vos Clients</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="assets/images/pic3.jpg" class="tales">
+        <div class="carousel-caption d-none d-md-block">
+
+          <p class="text-white bg-dark">La Gestion Des Différentes Réservations Effectuées</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="assets/images/pic7.jpg" class="tales">
+        <div class="carousel-caption d-none d-md-block">
+
+          <p class="text-white bg-dark">La Gestion Des Terrains</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="assets/images/pexels-pavel-danilyuk-6203563.jpg" class="tales">
+        <div class="carousel-caption d-none d-md-block">
+
+          <p class="text-white bg-dark">La Gestion Du Personnel</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+<div id="Apropos">
+  <h1 class="col-md-12 col-sm-12 wow fadeInUp home-title apropos animated"
+      style="visibility: visible; animation-name: fadeInUp;">À&nbsp;Propos</h1>
+  <div class="row g-0 bg-light position-relative">
+    <div class="col-md-6 mb-md-0 p-md-4">
+      <img src="assets/images/terrains_all.jpg" style="margin-top:50px" class="w-100 " alt="...">
+    </div>
+    <div class="col-md-6 p-4 ps-md-0">
+      <div class="card-body">
+        <p class="p-t-8" style=" font-size: 14px!important;
+  line-height: 1.42857143!important;
+  color: #404040!important;"><i class="fa fa-caret-right p-r-5 par" style="color: #1878E7" aria-hidden="true"></i><strong>Selon
+          la loi n° 06-87 relative à l’éducation physique et aux sports, promulguée par le Dahir n° 1-88-172 du 13
+          Chaoual 1409 (19 mai 1989).</strong><br><br>
+          <i class="fa fa-caret-right p-r-5 par" style="color: #1878E7" aria-hidden="true"></i><strong> Conformément aux
+          directives de la Charte nationale de l'éducation et de la formation et aux exigences de la loi 01.00 relative
+          à l'organisation de l'enseignement supérieur, qui stipule la nécessité d'impliquer les étudiants des
+          différentes institutions universitaires dans les activités sportives, et la mise en valeur de leurs capacités
+          athlétiques.</strong><br><br>
+          <i class="fa fa-caret-right p-r-5 par" style="color: #1878E7" aria-hidden="true"></i><strong> Au vu des exigences des
+          activités sportives en termes de stades et d'équipements, et dans un souci de promouvoir le principe
+          d'ouverture de l'université et de son rayonnement sportif sur son environnement extérieur. L'Université Ibn
+            Tofaïl a construit un centre sportif pour accueillir divers événements sportifs.</strong><br><br>
+          <i class="fa fa-caret-right p-r-5 par" style="color: #1878E7" aria-hidden="true"></i><strong> Les installations du
+          centre sportif de l'Université Ibn Tofaïl sont mises gratuitement à disposition des étudiants, du corps
+          professoral, et du staff administratif de tous les établissements de l'Université Ibn Tofaïl, et à titre
+          payant pour les écoles, les associations sportives, les équipes et les clubs et toute autre institution
+            externe à l’université.</strong></p>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div id="Fields">
+  <br data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
+      data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0" id="nosterrains"><br>
+  <h1 class="col-md-12 col-sm-12 wow fadeInUp home-title apropos animated"
+      style="visibility: visible; animation-name: fadeInUp;">Nos Terrains</h1>
+  <div class="row g-0 bg-light position-relative">
+    <div class="col-md-6 mb-md-0 p-md-4">
+      <img src="assets/images/pic%20terrain%201.png" class="w-100" alt="...">
+    </div>
+    <div class="col-md-6 p-4 ps-md-0">
+      <div class="card-body">
+        <h1 class="card-title"> 1) Terrain Synthétique : </h1>
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h1 class="accordion-header" id="headingOne">
+              <button class="accordion-button" style=" text-transform: uppercase!important" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                      aria-controls="collapseOne">
+                A Propos :
+              </button>
+            </h1>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                 data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Terrain Gazonné pour des match de Foot 6 vs 6 ou 5 vs 5</strong></div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h1 class="accordion-header" id="headingTwo">
+              <button style=" text-transform: uppercase!important" class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                      aria-controls="collapseTwo">
+                Tarifs :
+              </button>
+            </h1>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                 data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Prix Pour Une Heure : </strong><br><br>
+                <strong>Matin : 250 DH </strong><br><br>
+                <strong>Nuit : 300 DH </strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="btn btn-primary">Réserver Maintenant</a>
+      </div>
+    </div>
+  </div>
+  <div class="row g-0 bg-light position-relative">
+    <div class="col-md-6 mb-md-0 p-md-4">
+      <img src="assets/images/pic%20terrain%202.png" class="w-100" alt="...">
+    </div>
+    <div class="col-md-6 p-4 ps-md-0">
+      <div class="card-body">
+        <h1 class="card-title"> 2) Terrain Multi-sports 1 : </h1>
+        <div class="accordion" id="accordionExample1">
+          <div class="accordion-item">
+            <h1 class="accordion-header" id="headingThree">
+              <button class="accordion-button" style=" text-transform: uppercase!important" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true"
+                      aria-controls="collapsethree">
+                A Propos :
+              </button>
+            </h1>
+            <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree"
+                 data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Terrains cimenté pour sports collectifs avec possibilité des matchs de 6 vs 6 ou 5 vs 5 :
+                  Mini-Foot / Handball / Basket-ball / Volley / Tennis .
+                </strong></div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h1 class="accordion-header" id="headingFourth">
+              <button style=" text-transform: uppercase!important" class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#collapseFourth" aria-expanded="false"
+                      aria-controls="collapseFourth">
+                Tarifs :
+              </button>
+            </h1>
+            <div id="collapseFourth" class="accordion-collapse collapse" aria-labelledby="headingFourth"
+                 data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Prix Pour Une Heure : </strong><br><br>
+                <strong>Matin Et Soir: 200 DH </strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="btn btn-primary">Réserver Maintenant</a>
+      </div>
+    </div>
+  </div>
+  <div class="row g-0 bg-light position-relative">
+    <div class="col-md-6 mb-md-0 p-md-4">
+      <img src="assets/images/pic%20terrain%203.png" class="w-100" alt="...">
+    </div>
+    <div class="col-md-6 p-4 ps-md-0">
+      <div class="card-body">
+        <h1 class="card-title"> 3) Terrain Multi-sports 2 : </h1>
+        <div class="accordion" id="accordionExample4">
+          <div class="accordion-item">
+            <h1 class="accordion-header" id="headingFive">
+              <button class="accordion-button" style=" text-transform: uppercase!important" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true"
+                      aria-controls="collapseFive">
+                A Propos :
+              </button>
+            </h1>
+            <div id="collapseFive" class="accordion-collapse collapse show" aria-labelledby="headingFive"
+                 data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Terrains cimenté pour sports collectifs avec possibilité des matchs de 6 vs 6 ou 5 vs 5 :
+                  Mini-Foot / Handball / Basket-ball / Volley / Tennis .
+                </strong></div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h1 class="accordion-header" id="headingSexth">
+              <button style=" text-transform: uppercase!important" class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#collapseSexth" aria-expanded="false"
+                      aria-controls="collapseSexth">
+                Tarifs :
+              </button>
+            </h1>
+            <div id="collapseSexth" class="accordion-collapse collapse" aria-labelledby="headingSexth"
+                 data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Prix Pour Une Heure : </strong><br><br>
+                <strong>Matin Et Soir: 200 DH </strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="btn btn-primary">Réserver Maintenant</a>
+      </div>
+
+    </div>
+  </div>
+  <div class="row g-0 bg-light position-relative">
+    <div class="col-md-6 mb-md-0 p-md-4">
+      <img src="assets/images/pic%20terrain%204.png" class="w-100" alt="...">
+    </div>
+    <div class="col-md-6 p-4 ps-md-0">
+      <div class="card-body">
+        <h1 class="card-title"> 4) Terrain Multi-sports 3 : </h1>
+        <div class="accordion" id="accordionExample5">
+          <div class="accordion-item">
+            <h1 class="accordion-header" id="headingSeven">
+              <button class="accordion-button" style=" text-transform: uppercase!important" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="true"
+                      aria-controls="collapseSeven">
+                A Propos :
+              </button>
+            </h1>
+            <div id="collapseSeven" class="accordion-collapse collapse show" aria-labelledby="headingSeven"
+                 data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Terrains cimenté pour sports collectifs avec possibilité des matchs de 6 vs 6 ou 5 vs 5 :
+                  Mini-Foot / Handball / Volley / Tennis .
+                </strong></div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h1 class="accordion-header" id="headingEighth">
+              <button style=" text-transform: uppercase!important" class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#collapseEighth" aria-expanded="false"
+                      aria-controls="collapseEighth">
+                Tarifs :
+              </button>
+            </h1>
+            <div id="collapseEighth" class="accordion-collapse collapse" aria-labelledby="headingEighth"
+                 data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Prix Pour Une Heure : </strong><br><br>
+                <strong>Matin Et Soir: 200 DH </strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="btn btn-primary">Réserver Maintenant</a>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+<div id="Planning">
+
+  <h1 class="col-md-12 col-sm-12 wow fadeInUp home-title apropos animated"
+      style="visibility: visible; animation-name: fadeInUp; margin-top:50px;">Planning</h1>
+  <div class="row g-0 bg-light position-relative " style="border: #1773DE 3px solid!important;padding: 10px">
+    <div class="accordion" id="accordionExample8">
+      <div class="accordion-item">
+        <h1 class="accordion-header" id="heading9">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" style="text-transform: uppercase!important" data-bs-target="#collapse9" aria-expanded="true" aria-controls="collapse9">
+            Terrain Synthétique :
+          </button>
+        </h1>
+        <div id="collapse9" class="accordion-collapse collapse show" aria-labelledby="heading9" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <table class="table" style="width: 1050px!important; margin-top: 20px;">
+              <thead>
+              <tr>
+                <td scope="col">
+
+                  &nbsp;
+                </td>
+                <td scope="col">8h - 10h</td>
+                <td scope="col">10h - 12h</td>
+                <td scope="col">12h - 14h</td>
+                <td scope="col">14h - 16h</td>
+                <td scope="col">16h - 18h</td>
+                <td scope="col">18h - 20h</td>
+
+              </tr>
+              </thead>
+
+              <tbody>
+
+
+              <tr>
+                <td>
+                  lundi
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="indisponible ">
+                  ENSA (ÉTUDIANTS)
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="indisponible ">
+                  ESEF (Formation)
+                </td>
+                <td class="indisponible ">
+                  Sélection Mini-Foot UIT
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  mardi
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="indisponible ">
+                  ENSA (étudiants)
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="indisponible ">
+                  ESEF (Formation)
+                </td>
+                <td class="indisponible ">
+                  Sélection Mini-Foot UIT
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  mercredi
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="indisponible ">
+                  Fac Sciences (étudiants)
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="indisponible ">
+                  ESEF Formation
+                </td>
+                <td class="indisponible ">
+                  Tennis
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  jeudi
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="indisponible ">
+                  Fac Droit (étudiants)
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="indisponible ">
+                  ESEF Formation
+                </td>
+                <td class="indisponible ">
+                  HB Sélection
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  vendredi
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="indisponible ">
+                  Sport pour étudiants en situation de Handicap(ESH)
+                </td>
+                <td class="indisponible ">
+                  Sport pour étudiants en situation de Handicap(ESH)
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  samedi
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+              </tr>
+
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h1 class="accordion-header" id="heading10">
+          <button class="accordion-button collapsed" type="button"  style="text-transform: uppercase!important"data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
+            Terrain Multi-Sports 1 :
+          </button>
+        </h1>
+        <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="heading10" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <table class="table" style="width: 1050px!important; margin-top: 20px;">
+              <thead>
+              <tr>
+                <td scope="col">
+
+                  &nbsp;
+                </td>
+                <td scope="col">8h - 10h</td>
+                <td scope="col">10h - 12h</td>
+                <td scope="col">12h - 14h</td>
+                <td scope="col">14h - 16h</td>
+                <td scope="col">16h - 18h</td>
+                <td scope="col">18h - 20h</td>
+
+              </tr>
+              </thead>
+
+              <tbody>
+
+
+              <tr>
+                <td>
+                  lundi
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="indisponible ">
+                  ENSA (ÉTUDIANTS)
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="indisponible ">
+                  ESEF (Formation)
+                </td>
+                <td class="indisponible ">
+                  Sélection Mini-Foot UIT
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  mardi
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="indisponible ">
+                  ENSA (étudiants)
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="indisponible ">
+                  ESEF (Formation)
+                </td>
+                <td class="indisponible ">
+                  Sélection Mini-Foot UIT
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  mercredi
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="indisponible ">
+                  Fac Sciences (étudiants)
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="indisponible ">
+                  ESEF Formation
+                </td>
+                <td class="indisponible ">
+                  Tennis
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  jeudi
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="indisponible ">
+                  Fac Droit (étudiants)
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="indisponible ">
+                  ESEF Formation
+                </td>
+                <td class="indisponible ">
+                  HB Sélection
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  vendredi
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="indisponible ">
+                  Sport pour étudiants en situation de Handicap(ESH)
+                </td>
+                <td class="indisponible ">
+                  Sport pour étudiants en situation de Handicap(ESH)
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  samedi
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+              </tr>
+
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h1 class="accordion-header"  id="heading11">
+          <button class="accordion-button collapsed" type="button" style="text-transform: uppercase!important;" data-bs-toggle="collapse" data-bs-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
+            Terrain Multi-Sports 2 :
+          </button>
+        </h1>
+        <div id="collapse11" class="accordion-collapse collapse" aria-labelledby="heading11" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <table class="table" style="width: 1050px!important; margin-top: 20px;">
+              <thead>
+              <tr>
+                <td scope="col">
+
+                  &nbsp;
+                </td>
+                <td scope="col">8h - 10h</td>
+                <td scope="col">10h - 12h</td>
+                <td scope="col">12h - 14h</td>
+                <td scope="col">14h - 16h</td>
+                <td scope="col">16h - 18h</td>
+                <td scope="col">18h - 20h</td>
+
+              </tr>
+              </thead>
+
+              <tbody>
+
+
+              <tr>
+                <td>
+                  lundi
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="indisponible ">
+                  ENSA (ÉTUDIANTS)
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="indisponible ">
+                  ESEF (Formation)
+                </td>
+                <td class="indisponible ">
+                  Sélection Mini-Foot UIT
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  mardi
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="indisponible ">
+                  ENSA (étudiants)
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="indisponible ">
+                  ESEF (Formation)
+                </td>
+                <td class="indisponible ">
+                  Sélection Mini-Foot UIT
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  mercredi
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="indisponible ">
+                  Fac Sciences (étudiants)
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="indisponible ">
+                  ESEF Formation
+                </td>
+                <td class="indisponible ">
+                  Tennis
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  jeudi
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="indisponible ">
+                  Fac Droit (étudiants)
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="indisponible ">
+                  ESEF Formation
+                </td>
+                <td class="indisponible ">
+                  HB Sélection
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  vendredi
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="indisponible ">
+                  Sport pour étudiants en situation de Handicap(ESH)
+                </td>
+                <td class="indisponible ">
+                  Sport pour étudiants en situation de Handicap(ESH)
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  samedi
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+              </tr>
+
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h1 class="accordion-header" id="heading12">
+          <button class="accordion-button collapsed" type="button" style="text-transform: uppercase!important;" data-bs-toggle="collapse" data-bs-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
+            Terrain Multi-Sports 3 :
+          </button>
+        </h1>
+        <div id="collapse12" class="accordion-collapse collapse" aria-labelledby="heading12" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <table class="table" style="width: 1050px!important; margin-top: 20px;">
+              <thead>
+              <tr>
+                <td scope="col">
+
+                  &nbsp;
+                </td>
+                <td scope="col">8h - 10h</td>
+                <td scope="col">10h - 12h</td>
+                <td scope="col">12h - 14h</td>
+                <td scope="col">14h - 16h</td>
+                <td scope="col">16h - 18h</td>
+                <td scope="col">18h - 20h</td>
+
+              </tr>
+              </thead>
+
+              <tbody>
+
+
+              <tr>
+                <td>
+                  lundi
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="indisponible ">
+                  ENSA (ÉTUDIANTS)
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="indisponible ">
+                  ESEF (Formation)
+                </td>
+                <td class="indisponible ">
+                  Sélection Mini-Foot UIT
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  mardi
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="indisponible ">
+                  ENSA (étudiants)
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="indisponible ">
+                  ESEF (Formation)
+                </td>
+                <td class="indisponible ">
+                  Sélection Mini-Foot UIT
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  mercredi
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="indisponible ">
+                  Fac Sciences (étudiants)
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="indisponible ">
+                  ESEF Formation
+                </td>
+                <td class="indisponible ">
+                  Tennis
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  jeudi
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="indisponible ">
+                  Fac Droit (étudiants)
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="indisponible ">
+                  ESEF Formation
+                </td>
+                <td class="indisponible ">
+                  HB Sélection
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  vendredi
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="indisponible ">
+                  Sport pour étudiants en situation de Handicap(ESH)
+                </td>
+                <td class="indisponible ">
+                  Sport pour étudiants en situation de Handicap(ESH)
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  samedi
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+                <td class="disponible ">
+                  Location
+                </td>
+              </tr>
+
+
+              </tbody>
+            </table>
+      </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

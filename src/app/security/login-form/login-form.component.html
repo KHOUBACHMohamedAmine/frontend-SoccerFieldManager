@@ -1,0 +1,36 @@
+<form (ngSubmit)="submitForm()" [formGroup]="form" autocomplete="off">
+  <div style="display: flex; justify-content: center">
+
+
+      <!-- Username -->
+      <div>
+
+          <label>Email</label>
+          <input
+
+            placeholder="Ex. profanis"
+            formControlName="email"
+          />
+      </div>
+      <!-- /Username -->
+
+      <!-- Password -->
+      <div>
+
+          <mat-label>Password</mat-label>
+          <input
+
+            type="password"
+            placeholder="Ex. s3c3tP@ss"
+            formControlName="password"
+          />
+
+      </div>
+      <!-- /Password -->
+
+      <div>
+        <button type="submit" class=" btn btn-success">Login</button>
+      </div>
+
+  </div>
+</form>

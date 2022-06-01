@@ -1,35 +1,56 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="border-bottom: 5px solid green;">
   <div class="container-fluid ">
     <a class="navbar-brand" href="home-page">SoccerFieldManager</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent" >
+    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link me-4" href="home-page">Home </a>
+          <a class="nav-link me-2" href="home-page-client">Accueil </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link me-4" href="client-list">Lise des Clients</a>
+          <a class="nav-link me-2" href="#apropos">À Propos</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link me-4" href="reservation-list">Liste des Reservations </a>
-        </li> <li class="nav-item">
-        <a class="nav-link me-4" href="terrain-list">Liste des Terrains</a>
-      </li> <li class="nav-item">
-        <a class="nav-link me-4" href="personnel-list">Liste du Personnel</a>
-      </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Admin Name
+          <a class="nav-link me-2" href="#nosterrains">Nos Terrains</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link me-2" href="#planning">Planning</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link me-2" href="#reserver">Réserver</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link me-2" href="#contact">Contact</a>
+        </li>
+
+
+
+        <li  *ngIf="service.user !=null &&  service.user.roles!=null  && service.user.roles.includes('admin')" class="dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+             aria-expanded="false">
+            Espace Administrateur
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li><a class="dropdown-item" href="#">Logout</a></li>
-
+            <li><a class="dropdown-item" href="client-list">Liste des Clients</a></li>
+            <li><a class="dropdown-item" href="reservation-list">Liste des Reservations</a></li>
+            <li><a class="dropdown-item" href="terrain-list">Liste des Terrains</a></li>
+            <li><a class="dropdown-item" href="personnel-list">Liste du Personnel</a></li>
           </ul>
-      </ul>
+        </li>
+
+
+
+        <li class="nav-item"><a   *ngIf="service.user!=null" class="nav-link" style="margin-left: 90px; " href="/client-form">S'inscrire</a></li>
+
+        <li  class="nav-item"><a *ngIf="service.user!=null" class="nav-link" href="/login">Se Connecter</a></li>
+        </ul>
+
+
 
     </div>
   </div>
