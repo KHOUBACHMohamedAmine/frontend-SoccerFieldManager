@@ -1,6 +1,12 @@
 .button{
-  margin-left: 5px!important;
+  margin-left: 0px!important;
 }
 .i{
-  margin-left: 5px!important;
+  margin-left: 2px!important;
+}
+.form-control.ng-touched.ng-invalid{
+  border:1px solid red;
+}
+.form-control.ng-touched.ng-valid{
+  border:2px solid green;
 }

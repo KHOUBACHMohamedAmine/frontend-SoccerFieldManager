@@ -3,6 +3,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Employee} from "../../models/employee";
 import {PersonnelService} from "../../services/personnel.service";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 
 
@@ -14,6 +15,11 @@ import {PersonnelService} from "../../services/personnel.service";
 export class PersonnelListComponent implements OnInit {
   id :any;
   employees: Employee[] =[];
+  cin=new FormGroup({
+    val: new FormControl('',[Validators.required,Validators.pattern('\\w\\w\\d\\d\\d\\d\\d')]),
+  })
+  private data: any;
+  errorMsg:string;
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action , {
       duration: 3000
@@ -26,6 +32,17 @@ export class PersonnelListComponent implements OnInit {
     this.getEmployees();
 
 
+  }
+  getPersonnelByCin(){
+    this.personnelService.findPersonnelByCin(this.cin.get('val')?.value).subscribe(res=>{
+
+      this.data=res;
+      this.employees=this.data;
+
+
+    },error => {
+      this.errorMsg=error;
+    })
   }
 
 

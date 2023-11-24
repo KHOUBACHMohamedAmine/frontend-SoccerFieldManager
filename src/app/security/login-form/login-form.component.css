@@ -1,0 +1,21 @@
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+.h-custom {
+  height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+  .h-custom {
+    height: 100%;
+  }
+}
+.form-control.ng-touched.ng-invalid{
+  border:1px solid red;
+}
+.form-control.ng-touched.ng-valid{
+  border:1px solid green;
+ }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Reservation} from "../../models/reservation";
 import {ReservationService} from "../../services/reservation.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-reservations',
@@ -9,8 +10,11 @@ import {MatSnackBar} from "@angular/material/snack-bar";
   styleUrls: ['./reservations.component.css']
 })
 export class ReservationsComponent implements OnInit {
-
+  errorMsg: string;
   reservations: Reservation[] =[];
+  date=new FormGroup({
+    val: new FormControl('',Validators.required),
+  })
   openSnackBar(message: string, action: string , ) {
     this._snackBar.open(message, action , {
       duration: 3000
@@ -47,5 +51,23 @@ export class ReservationsComponent implements OnInit {
     })
 
 
+  }
+
+  getReservationByDate() {
+if(!this.date.get('val')?.value){
+  this.errorMsg="Veulliez Spécifiez Une Valeur D'abord !!"
+  location.replace('reservation-list');
+
+
+}
+   else {this.reservationService.findReservationByDate(this.date.get('val')?.value).subscribe(res=>{
+
+      this.reservations=res;
+
+
+    },error => {
+      this.errorMsg=error;
+    })
+}
   }
 }

@@ -15,6 +15,7 @@ export class ReservationEditComponent implements OnInit {
   reservationForm = new FormGroup({
     reference: new FormControl(''),
     date: new FormControl(''),
+    hour: new FormControl(''),
   });
   private id: any;
   private data: any
@@ -58,7 +59,7 @@ export class ReservationEditComponent implements OnInit {
   }
 
   private loadReservation(reservation : Reservation | undefined) {
-    this.reservationForm.setValue({reference:reservation?.reference,date: reservation?.date});
+    this.reservationForm.setValue({reference:reservation?.reference,date: reservation?.date,hour:reservation?.hour});
 
 
   }

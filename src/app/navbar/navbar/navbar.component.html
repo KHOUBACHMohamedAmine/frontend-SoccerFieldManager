@@ -1,15 +1,16 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="border-bottom: 5px solid green;">
   <div class="container-fluid ">
-    <a class="navbar-brand" href="home-page">SoccerFieldManager</a>
+    <a class="navbar-brand" style="margin-right:300px!important;" href=""><i  id="soccerlogo"class="fa fa-futbol-o fa-lg"></i></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
         <li class="nav-item">
-          <a class="nav-link me-2" href="home-page-client">Accueil </a>
+          <a class="nav-link me-2" href="">Accueil </a>
         </li>
         <li class="nav-item">
           <a class="nav-link me-2" href="#apropos">À Propos</a>
@@ -22,15 +23,15 @@
           <a class="nav-link me-2" href="#planning">Planning</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link me-2" href="#reserver">Réserver</a>
+          <a class="nav-link me-2" href="/reserver">Réserver</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link me-2" href="#contact">Contact</a>
+          <a class="nav-link me-2" href="#footer">Contact</a>
         </li>
 
 
 
-        <li  *ngIf="service.user !=null &&  service.user.roles!=null  && service.user.roles.includes('admin')" class="dropdown">
+        <li  *ngIf="service.user !=null &&  service.user.roles!=null  && service.user.roles.includes('admin') " class="dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
              aria-expanded="false">
             Espace Administrateur
@@ -45,9 +46,10 @@
 
 
 
-        <li class="nav-item"><a   *ngIf="service.user!=null" class="nav-link" style="margin-left: 90px; " href="/client-form">S'inscrire</a></li>
+        <li class="nav-item"><a *ngIf="this.service.user ==null" class="btn btn-success" style="margin-left: 200px;" href="/client-form">S'inscrire</a></li>
+        <li  class="nav-item"><a *ngIf="this.service.user !=null " class="btn btn-danger" style="margin-left: 100px;" (click)="Deconnect();" >Se Déconnecter</a></li>
+        <li  class="nav-item"><a *ngIf="this.service.user ==null " class="btn btn-primary" href="/login" style="margin-left: 5px">Se Connecter</a></li>
 
-        <li  class="nav-item"><a *ngIf="service.user!=null" class="nav-link" href="/login">Se Connecter</a></li>
         </ul>
 
 

@@ -3,6 +3,7 @@ import {ClientService} from "../../services/client.service";
 import {Client} from "../../models/client";
 import {ActivatedRoute, Route, Router} from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-clients',
@@ -11,7 +12,12 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 })
 export class ClientsComponent implements OnInit {
 id :any;
-clients: Client[] =[];
+cin=new FormGroup({
+  val: new FormControl('',[Validators.required,Validators.pattern('\\w\\w\\d\\d\\d\\d\\d')]),
+})
+clients: Client[];
+  private data:any;
+  errorMsg: string;
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action , {
       duration: 3000
@@ -46,6 +52,17 @@ clients: Client[] =[];
       this.openSnackBar("Client Supprimé avec succés","fermer");
       this.getClients();
 
+    })
+}
+getByCin(){
+    this.clientService.findClientByCin(this.cin.get('val')?.value).subscribe(res=>{
+
+        this.data=res;
+        this.clients=this.data;
+
+
+    },error => {
+      this.errorMsg=error;
     })
 }
 

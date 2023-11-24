@@ -34,26 +34,28 @@ import {HasRoleGuard} from "./has-role.guard";
 import {ClientsHomePageModule} from "./client\'shomePage/clientsHomePage.module";
 import {ClientFormComponent} from "./client'shomePage/client-form/client-form.component";
 import {HomeModule} from "./home/home.module";
+import {ReservationFormComponent} from "./client'shomePage/reservation-form/reservation-form.component";
 
 
 
 
 const appRoutes : Routes = [
   {path:'',component:HomeComponent},
-  { path: 'client-list/client-edit/:id', component: ClientEditComponent },
+  { path: 'client-list/client-edit/:id', component: ClientEditComponent,canActivate:[IsAuthenticatedGuard,HasRoleGuard],data:{role:'admin'} },
   { path: 'client-list', component: ClientsComponent,canActivate:[IsAuthenticatedGuard,HasRoleGuard],data:{role:'admin'} },
-  { path: 'reservation-list', component: ReservationsComponent },
-  { path: 'reservation-list/reservation-edit/:id', component: ReservationEditComponent },
-  { path: 'terrain-list', component: TerrainComponent },
-  { path: 'terrain-list/terrain-form', component: TerrainFormComponent },
-  { path: 'terrain-list/terrain-edit/:id', component: TerrainEditComponent },
-  { path: 'personnel-list', component: PersonnelListComponent },
-  { path: 'personnel-list/personnel-form', component: PersonnelFormComponent },
-  { path: 'personnel-list/personnel-edit/:id', component: PersonnelEditComponent },
-  { path: 'home-page', component: HomePageComponent },
+  { path: 'reservation-list', component: ReservationsComponent,canActivate:[IsAuthenticatedGuard,HasRoleGuard],data:{role:'admin'} },
+  { path: 'reservation-list/reservation-edit/:id', component: ReservationEditComponent,canActivate:[IsAuthenticatedGuard,HasRoleGuard],data:{role:'admin'} },
+  { path: 'terrain-list', component: TerrainComponent ,canActivate:[IsAuthenticatedGuard,HasRoleGuard],data:{role:'admin'}},
+  { path: 'terrain-list/terrain-form', component: TerrainFormComponent,canActivate:[IsAuthenticatedGuard,HasRoleGuard],data:{role:'admin'} },
+  { path: 'terrain-list/terrain-edit/:id', component: TerrainEditComponent,canActivate:[IsAuthenticatedGuard,HasRoleGuard],data:{role:'admin'} },
+  { path: 'personnel-list', component: PersonnelListComponent ,canActivate:[IsAuthenticatedGuard,HasRoleGuard],data:{role:'admin'}},
+  { path: 'personnel-list/personnel-form', component: PersonnelFormComponent ,canActivate:[IsAuthenticatedGuard,HasRoleGuard],data:{role:'admin'}},
+  { path: 'personnel-list/personnel-edit/:id', component: PersonnelEditComponent,canActivate:[IsAuthenticatedGuard,HasRoleGuard],data:{role:'admin'} },
+  { path: 'home-page', component: HomeComponent },
   { path: 'client/home', component: HomeComponent },
   { path: 'login', component: LoginFormComponent },
   { path: 'client-form', component: ClientFormComponent },
+  { path: 'reserver', component: ReservationFormComponent,canActivate:[IsAuthenticatedGuard] },
 
 
 

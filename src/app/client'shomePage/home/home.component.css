@@ -11,20 +11,7 @@
 .navbar-brand:hover{
   color:green;
 }
-/* Smaller than standard 960 (devices and browsers) */
-@media only screen and (max-width: 959px) {}
 
-/* Tablet Portrait size to standard 960 (devices and browsers) */
-@media only screen and (min-width: 768px) and (max-width: 959px) {}
-
-/* All Mobile Sizes (devices and browser) */
-@media only screen and (max-width: 767px) {}
-
-/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-@media only screen and (min-width: 480px) and (max-width: 767px) {}
-
-/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-@media only screen and (max-width: 479px) {}
 .tales {
   width: 100%;
   height: 600px;
@@ -51,11 +38,34 @@ td{
   color:white;
 
 }
+.ft{
+  font-family: 'Fugaz One', cursive;
+  text-align: center;
+  text-transform: uppercase!important;
+  background: #404040;
+  color:white;
+}
 h1{
   font-family: 'Fugaz One', cursive;
   color: #1778e7;
   text-align: center;
   text-transform: uppercase!important;
+}
+hr {
+  width: 30%;
+  height: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eee;
+  color:black;
+  background-color: #000000;
+  display: block;
+  unicode-bidi: isolate;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
 }
 .btn{
   padding:15px;

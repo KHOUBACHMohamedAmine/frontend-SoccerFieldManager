@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { ClientFormComponent } from './client-form/client-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { ReservationFormComponent } from './reservation-form/reservation-form.component';
 
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    ClientFormComponent
+    ClientFormComponent,
+    ReservationFormComponent
   ],
   imports: [
     CommonModule,

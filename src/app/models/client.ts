@@ -1,3 +1,5 @@
+import {UserModel} from "./user";
+
 export interface Client {
   id?:number;
   nom?:string;
@@ -8,6 +10,7 @@ export interface Client {
   numtel?:string;
   sexe?:string;
   isArchived?:boolean;
+  user?:UserModel;
 
 
 

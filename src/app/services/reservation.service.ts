@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {Client} from "../models/client";
 import {Reservation} from "../models/reservation";
+import {catchError, throwError} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ export class ReservationService {
   findAll(){
     return this.http.get<Reservation[]>(`${this.apiUrl}nonArchived`);
   }
+
 
   insert(reservation){
     return this.http.post(this.apiUrl,reservation);
@@ -39,5 +41,24 @@ export class ReservationService {
   add(reservation) {
     return this.http.post(this.apiUrl,reservation);
 
+  }
+
+  findReservationByDate(date) {
+    return this.http.get<Reservation[]>(`${this.apiUrl}date/${date}`).pipe(
+      catchError(this.handleError)
+    );
+  }
+  private handleError(error: HttpErrorResponse) {
+    let errorMessage='';
+    if (error.status === 0) {
+      // A client-side or network error occurred. Handle it accordingly.
+      errorMessage=error.error;
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong.
+      errorMessage= error.error;
+    }
+    // Return an observable with a user-facing error message.
+    return throwError(() => new Error(errorMessage));
   }
 }

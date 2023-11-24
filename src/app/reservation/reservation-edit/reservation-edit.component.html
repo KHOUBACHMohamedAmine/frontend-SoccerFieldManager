@@ -1,4 +1,4 @@
-<form  [formGroup]="reservationForm" (ngSubmit)="updateReservation()">
+<form style="margin-top: 100px!important;" [formGroup]="reservationForm" (ngSubmit)="updateReservation()">
 
   <div class="from-group">
 
@@ -8,8 +8,28 @@
   <div class="from-group">
 
     <label for="date" class="form-label" >Date Réservation</label>
-    <input type="text" class="form-control" id="date" formControlName="date" >
+    <input type="date" class="form-control" id="date" formControlName="date" >
 
+  </div>
+  <div class="from-group">
+
+    <label for="hour" class="form-label" >Heure</label>
+    <select class="form-control" id="hour"  formControlName="hour">
+      <option selected="selected">Choisir l'heure</option>
+      <option value="8">8h</option>
+      <option  value="9">9h</option>
+      <option value="10">10h</option>
+      <option value="11">11h</option>
+      <option value="12">12h</option>
+      <option value="13">13h</option>
+      <option value="14">14h</option>
+      <option value="15">15h</option>
+      <option value="16">16h</option>
+      <option value="17">17h</option>
+      <option value="18">18h</option>
+      <option value="19">19h</option>
+      <option value="20">20h</option>
+    </select>
   </div>
 
   <button class="btn btn-success" >Mise à Jour</button>

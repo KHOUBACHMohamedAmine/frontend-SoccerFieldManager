@@ -1,15 +1,26 @@
-<div class="row">
-  <table class="table caption-top">
+<form [formGroup]="date" (ngSubmit)="getReservationByDate()">
+  <div  style="margin-top: 100px!important;width:300px" class="input-group mb-3">
+    <input type="date" class="form-control" formControlName="val" id="val" name="val" placeholder="Cherchez Par Date" >
+    <button class="btn btn-primary" [disabled]="date.invalid"  type="submit">Chercher</button><br>
+  </div>
+  <small  *ngIf="date.get('val')?.invalid && date.get('val')?.touched" class="text-danger">Choisissez Une Date</small>
+</form>
+<div class="row " *ngIf="errorMsg">
+  <h5 class="text-danger">{{this.errorMsg}}</h5>
+</div>
+<div  class="row" *ngIf="!errorMsg">
+  <table style="text-align:center;font-size:12px!important;" class="table caption-top">
     <caption>Liste Des Reservations</caption>
     <thead>
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Client ID</th>
       <th scope="col">Nom du Client</th>
+      <th scope="col">Prenom du Client</th>
       <th scope="col">Cin</th>
-      <th scope="col">Etablissement</th>
-      <th scope="col">Reference</th>
+      <th scope="col">Sport</th>
       <th scope="col">Date de reservation</th>
+      <th scope="col">Heure de reservation</th>
       <th scope="col">Terrain</th>
       <th scope="col">Statut</th>
       <th scope="col">Actions</th>
@@ -17,16 +28,19 @@
     </thead>
     <tbody>
     <tr *ngFor="let reservation of reservations">
-      <td>{{reservation.id}}</td>
-      <td>{{reservation.client.id}}</td>
-      <td>{{reservation.client.nom}}</td>
-      <td>{{reservation.client.cin}}</td>
-      <td>{{reservation.client.etablissement}}</td>
-      <td>{{reservation.reference}}</td>
-      <td>{{reservation.date}}</td>
-      <td>{{reservation.terrain.id}}</td>
-      <td>{{reservation.status}}</td>
-      <td><button  class="btn btn-warning me-2"  role="button" routerLink="reservation-edit/{{reservation.id}}"><i class="fa fa-pencil"></i></button><button  class="btn btn-success me-2" (click)="confirmReservation(reservation)" role="button"><i class="fa fa-check" ></i></button><button (click)="deleteReservation(reservation.id)" class="btn btn-danger "  role="button"><i class="fa fa-trash"></i></button></td>
+      <td>{{reservation?.id}}</td>
+      <td>{{reservation?.client?.id}}</td>
+      <td>{{reservation?.client?.nom}}</td>
+      <td>{{reservation?.client?.prenom}}</td>
+      <td>{{reservation?.client?.cin}}</td>
+      <td>{{reservation?.reference}}</td>
+      <td>{{reservation?.date.substring(0,10)}}</td>
+      <td>{{reservation?.hour}}h</td>
+      <td>{{reservation?.terrain?.reference}}</td>
+      <td *ngIf="reservation.status==0">En Attente</td>
+      <td *ngIf="reservation.status==1">Confirmée</td>
+      <td *ngIf="reservation.status==2">Rejetée</td>
+      <td><button  class="btn btn-warning me-2"  [disabled]="reservation.status==1" role="button" routerLink="reservation-edit/{{reservation?.id}}"><i class="fa fa-pencil"></i></button><button [disabled]="reservation.status==1" class="btn btn-success me-2" (click)="confirmReservation(reservation)" role="button"><i class="fa fa-check" ></i></button><button (click)="deleteReservation(reservation.id)" class="btn btn-danger "  role="button"><i class="fa fa-trash"></i></button></td>
     </tr>
 
     </tbody>

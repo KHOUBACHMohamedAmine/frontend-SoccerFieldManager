@@ -1,5 +1,16 @@
-<button  type="button"  routerLink="personnel-form" class="btn btn-outline-primary" ><i class="fa fa-solid fa-user-plus fa-lg"></i> Ajouter Un Employé !</button>
-<div class="row">
+<button style="margin-top: 100px!important;" type="button"  routerLink="personnel-form" class="btn btn-outline-primary" ><i class="fa fa-solid fa-user-plus fa-lg"></i> Ajouter Un Employé !</button>
+<form [formGroup]="cin" (ngSubmit)="getPersonnelByCin()">
+  <div  style="margin-top: 30px!important;width:300px" class="input-group mb-3">
+    <input type="text" class="form-control" formControlName="val" id="val" name="val" placeholder="Cherchez Par Cin" >
+    <button class="btn btn-primary" [disabled]="cin.invalid" type="submit">Chercher</button>
+    <small  *ngIf="cin.get('val')?.invalid && cin.get('val')?.touched" class="text-danger">Veuillez Spécifier Un Num De Cin Correct (ex:JY12345)</small>
+
+  </div></form>
+<div class="row " *ngIf="errorMsg">
+  <h5 class="text-danger">{{this.errorMsg}}</h5>
+</div>
+<div class="row" *ngIf="!errorMsg">
+
 
   <table class="table caption-top">
     <caption>Liste Des Employés</caption>

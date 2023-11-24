@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {JwtClientService} from "../../services/jwt-client.service";
+import {Client} from "../../models/client";
 
 @Component({
   selector: 'app-navbar',
@@ -18,6 +19,13 @@ export class NavbarComponent implements OnInit {
       this.isAuthenticated=false;
       console.log(this.isAuthenticated);
     }
+
+  }
+
+  Deconnect(){
+    localStorage.clear();
+    sessionStorage.clear();
+    location.replace('/client/home');
   }
 
 }
